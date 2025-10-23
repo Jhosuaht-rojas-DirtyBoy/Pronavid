@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segumientocliente</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!-- Encabezado rojo -->
+    <header>
+        <img src="imagenes/Logopronavid.png" alt="Pronavid" class="logo">
+    </header>
+
+    <div class="volver">
+        <span>&#x21A9;</span>
+    </div>
+
+    <!-- Formulario -->
+    <section class="formulario">
+        <div class="fila">
+            <div class="campo">
+                <label>ID del cliente</label>
+                <input type="text">
+            </div>
+            <div class="campo">
+                <label>Cliente</label>
+                <input type="text">
+            </div>
+            <div class="campo">
+                <label>Fecha</label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="fila">
+            <div class="campo">
+                <label>Nombre cliente</label>
+                <input type="text">
+            </div>
+            <button class="btn-buscar">BUSCAR</button>
+        </div>
+    </section>
+
+    <!-- Barra inferior con fondo difuminado -->
+    <section class="seccion-inferior">
+        <div class="fondo-difuminado"></div>
+        <div class="barra-inferior">
+            <div class="encabezado-tabla">
+                <span>ID</span>
+                <span>Cliente</span>
+                <span>Fecha</span>
+                <span>Nombre cliente</span>
+                <span>Estado actual</span>
+            </div>
+                <div class="fila-datos">
+                <span>1</span>
+                <span>Distrifruver</span>
+                <span>03/02/25</span>
+                <span>Carlos Salamanca</span>
+                <span class="estado">En proceso</span>
+        </div>
+      <div class="botones">
+        <a href="SegumientoclienteGuardadoDetalle.html"><button class="btn-detalle">VER DETALLE</button></a>
+        <a href="SegumientoclienteGuardadoActualizar .html"><button class="btn-actualizar">ACTUALIZAR ESTADO</button></a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
