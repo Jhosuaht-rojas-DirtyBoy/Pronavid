@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Pronavid</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+    <header class="encabezado">
+        <img src="imagenes/logo_pronavid.png" alt="Logo Pronavid" class="logo">
+        <h1>Registro de Usuario</h1>
+    </header>
+
+    <main class="contenedor">
+        <div class="selector-rol">
+            <button id="btnAsesor">Registrarse como Asesor</button>
+            <button id="btnAdmin">Registrarse como Administrador</button>
+        </div>
+
+        <!-- FORMULARIO ASESOR -->
+        <form id="formAsesor" class="formulario oculto" action="registrarse.php" method="POST">
+            <h2>Registro Asesor</h2>
+            <input type="hidden" name="rol" value="Asesor">
+            <label>Nombre completo:</label>
+            <input type="text" name="nombre" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" name="correo" required>
+
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" required>
+
+            <label>Confirmar contraseña:</label>
+            <input type="password" name="confirmar" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- FORMULARIO ADMINISTRADOR -->
+        <form id="formAdmin" class="formulario oculto" action="registrarse.php" method="POST">
+            <h2>Registro Administrador</h2>
+            <input type="hidden" name="rol" value="Administrador">
+            <label>Nombre completo:</label>
+            <input type="text" name="nombre" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" name="correo" required>
+
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" required>
+
+            <label>Confirmar contraseña:</label>
+            <input type="password" name="confirmar" required>
+
+            <label>Código de verificación (admin):</label>
+            <input type="text" id="codigoAdmin" name="codigoAdmin" placeholder="Ej: 3115155344" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script>
+        const btnAsesor = document.getElementById('btnAsesor');
+        const btnAdmin = document.getElementById('btnAdmin');
+        const formAsesor = document.getElementById('formAsesor');
+        const formAdmin = document.getElementById('formAdmin');
+
+        btnAsesor.addEventListener('click', () => {
+            formAsesor.classList.remove('oculto');
+            formAdmin.classList.add('oculto');
+        });
+
+        btnAdmin.addEventListener('click', () => {
+            formAdmin.classList.remove('oculto');
+            formAsesor.classList.add('oculto');
+        });
+    </script>
+</body>
+</html>

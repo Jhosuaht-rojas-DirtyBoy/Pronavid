@@ -1,0 +1,72 @@
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezado */
+.encabezado {
+  background-color: #b72025;
+  padding: 10px;
+  text-align: left;
+}
+
+.logo {
+  width: 300px;
+}
+
+/* Botón volver */
+.btn-volver {
+  text-decoration: none;
+  font-size: 35px;
+  color: black;
+  margin-left: 15px;
+}
+
+/* Selector */
+.selector {
+  text-align: center;
+  margin-top: 20px;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px 15px;
+  border: 2px solid #555;
+  background-color: #d9d9d9;
+  font-family: "Times New Roman", serif;
+}
+
+/* Tabla */
+.tabla-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.tabla {
+  border-collapse: collapse;
+  background-color: #d62828;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  min-width: 800px;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid white;
+  padding: 10px 20px;
+}
+
+.tabla th {
+  font-weight: bold;
+}
+
+.tabla td {
+  background-color: #e63946;
+}
+
+/* Ajustes de encabezados */
+.tabla th[colspan] {
+  font-size: 50px;
+}

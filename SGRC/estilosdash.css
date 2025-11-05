@@ -1,0 +1,149 @@
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* ======== BARRA SUPERIOR ======== */
+.barra-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #b41616;
+    color: white;
+    padding: 10px 25px;
+}
+
+.logo {
+    height: 90px;
+}
+
+
+.usuario-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.icono-usuario {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.texto_inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #b41616;
+    padding: 10px;
+}
+
+.texto_inicio p {
+    color: white; 
+    font-size: 45px; 
+    font-weight: 600;
+    margin: 0; 
+    letter-spacing: 0.5px;
+}
+
+.opciones {
+    background-color: #d1720d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-nav {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: #b41616;
+    transform: scale(1.1);
+}
+
+.btn-opcion {
+    background-color: #ffffff;
+    border: 2px solid #b41616;
+    color: #b41616;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-opcion:hover {
+    background-color: #b41616;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-opcion.activo {
+    background-color: #b41616;
+    color: white;
+}
+
+.barra_media {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #b41616;
+    padding: 6px 5px;
+}
+
+.contenedor-imagen {
+    text-align: center;
+    margin: 20px 0 70px 0;
+}
+
+.imagen-fondo {
+    width: 100%;
+    max-width: 700px;
+}
+
+.barra-inferior {
+    background-color: #b41616;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
+
+.cerrar-sesion {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cerrar-sesion:hover {
+    background-color: white;
+    color: #b41616;
+    transform: scale(1.05);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos Vendidos - Alimentos Pronavid</title>
+  <link rel="stylesheet" href="masvendido.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header class="encabezado">
+    <img src="Logopronavid.png" alt="Logo Pronavid" class="logo">
+  </header>
+
+  <main>
+    <div class="selector-container">
+        <a href="reportebasico.html" class="btn-volver">⤺</a>
+
+        <div class="selector">
+    <select onchange="location = this.value;">
+        <option value="Seleccionar">Seleccionar</option>
+      <option value="frecuente.html">Cliente más frecuente</option>
+      <option value="registroc.html">Registro de clientes</option>
+      <option value="masvendido.html">Más comprado</option>
+    </select>
+  </div>
+
+    </div>
+
+    <section class="contenido">
+      <div class="recuadro">
+        <h2>Productos vendidos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Granola superior</th>
+              <th>Choquy Arroz</th>
+              <th>Galleta 60g</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Enero</td><td>10</td><td>15</td><td>15</td></tr>
+            <tr><td>Febrero</td><td>25</td><td>10</td><td>10</td></tr>
+            <tr><td>Marzo</td><td>25</td><td>20</td><td>15</td></tr>
+            <tr><td>Abril</td><td>5</td><td>20</td><td>0</td></tr>
+            <tr><td>Mayo</td><td>30</td><td>20</td><td>30</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="recuadro">
+        <h2>Total</h2>
+        <table>
+          <tbody>
+            <tr><td>Granola superior:</td><td>95</td></tr>
+            <tr><td>Galleta 60g:</td><td>85</td></tr>
+            <tr><td>Choquy Arroz:</td><td>70</td></tr>
+            <tr class="titulo"><td colspan="2">Más vendido</td></tr>
+            <tr><td>Granola superior:</td><td>95</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+ 

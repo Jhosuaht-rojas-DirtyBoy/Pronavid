@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Pronavid</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+    <header class="encabezado">
+        <img src="Logopronavid.png" alt="Logo Pronavid" class="logo">
+        <h1>Inicio de Sesión</h1>
+    </header>
+
+    <main class="contenedor">
+        <div class="selector-rol">
+            <button id="btnAsesor">Asesor</button>
+            <button id="btnAdmin">Administrador</button>
+        </div>
+
+        <!-- Formulario Asesor -->
+        <form id="formAsesor" class="formulario oculto">
+            <h2>Inicio Asesor</h2>
+            <input type="hidden" name="rol" value="Asesor">
+            <label>Correo:</label>
+            <input type="email" name="correo" required>
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" required>
+            <button type="submit">Iniciar Sesión</button>
+            <a href="recuperarcontra.html">¿Olvidaste tu contraseña?</a>
+        </form>
+
+        <!-- Formulario Administrador -->
+        <form id="formAdmin" class="formulario oculto">
+            <h2>Inicio Administrador</h2>
+            <input type="hidden" name="rol" value="Administrador">
+            <label>Correo:</label>
+            <input type="email" name="correo" required>
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" required>
+            <button type="submit">Iniciar Sesión</button>
+            <a href="recuperarcontra.html">¿Olvidaste tu contraseña?</a>
+        </form>
+    </main>
+
+    <script>
+        const btnAsesor = document.getElementById('btnAsesor');
+        const btnAdmin = document.getElementById('btnAdmin');
+        const formAsesor = document.getElementById('formAsesor');
+        const formAdmin = document.getElementById('formAdmin');
+
+        // Mostrar formulario según el rol
+        btnAsesor.addEventListener('click', () => {
+            formAsesor.classList.remove('oculto');
+            formAdmin.classList.add('oculto');
+        });
+
+        btnAdmin.addEventListener('click', () => {
+            formAdmin.classList.remove('oculto');
+            formAsesor.classList.add('oculto');
+        });
+
+        // Redirección al dashboard correspondiente
+        formAsesor.addEventListener('submit', (e) => {
+            e.preventDefault(); // evita el envío real
+            window.location.href = "dashboardasesor.html"; // redirige al dashboard del asesor
+        });
+
+        formAdmin.addEventListener('submit', (e) => {
+            e.preventDefault(); // evita el envío real
+            window.location.href = "dashboard.html"; // redirige al dashboard del administrador
+        });
+    </script>
+</body>
+</html>
+

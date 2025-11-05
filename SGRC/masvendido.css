@@ -1,0 +1,115 @@
+:root {
+  --rojo: #d51d2e;
+  --gris: #f2f2f2;
+  --negro: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.encabezado {
+  background-color: #b32121;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+}
+
+/* Barra de selección */
+.btn-volver {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  margin: 15px;
+  display: inline-block;
+}
+
+.selector {
+  text-align: center;
+  margin-top: 10px;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  background: #d9d9d9;
+  border: none;
+  box-shadow: 3px 3px 5px gray;
+  cursor: pointer;
+}
+
+/* Contenido */
+.contenido {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.recuadro {
+  border: 2px solid;
+  padding: 20px;
+  background-color: white;
+  width: 420px;
+  text-align: center;
+}
+
+.recuadro h2 {
+  background-color: var(--rojo);
+  color: white;
+  font-size: 20px;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+}
+
+th {
+  background-color: var(--rojo);
+  font-weight: bold;
+}
+
+td {
+  background-color: var(--rojo);
+}
+
+.titulo td {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recuadro {
+    width: 100%;
+  }
+}

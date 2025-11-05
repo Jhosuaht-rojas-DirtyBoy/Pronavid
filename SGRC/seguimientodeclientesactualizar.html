@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segumientocliente</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!-- Encabezado rojo -->
+    <header>
+        <img src="Logopronavid.png" alt="Pronavid" class="logo">
+    </header>
+
+    <div class="volver">
+        <span>&#x21A9;</span>
+    </div>
+
+    <!-- Formulario -->
+    <section class="formulario">
+        <div class="fila">
+            <div class="campo">
+                <label>ID del cliente</label>
+                <input type="text">
+            </div>
+            <div class="campo">
+                <label>Cliente</label>
+                <input type="text">
+            </div>
+            <div class="campo">
+                <label>Fecha</label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="fila">
+            <div class="campo">
+                <label>Nombre cliente</label>
+                <input type="text">
+            </div>
+        <div class="fila">
+            <div class="campo">
+                <label>Estado acual</label>
+                <input type="text">
+            </div>
+            <button class="btn-buscar">Actualizar</button>
+        </div>
+    </section>
+
+    <!-- Barra inferior con fondo difuminado -->
+    <section class="seccion-inferior">
+        <div class="fondo-difuminado"></div>
+        <div class="barra-inferior">
+            <div class="encabezado-tabla">
+                <span>ID</span>
+                <span>Cliente</span>
+                <span>Fecha</span>
+                <span>Nombre cliente</span>
+                <span>Estado actual</span>
+                
+            </div>
+                <div class="fila-datos">
+                <span>1</span>
+                <span>Distrifruver</span>
+                <span>03/02/25</span>
+                <span>Carlos Salamanca</span>
+                <span class="estado">En proceso</span>
+        </div>
+      <div class="botones">
+        <a href="seguimientocliente.html"><button class="btn-detalle">VOLVER</button></a>
+        <a href="seguimientodeclientesversionesguardados.html"><button class="btn-actualizar">VER VERSIONES ANTERIORES</button></a>
+      </div>
+            <p id="mensajeExito" class="mensaje-exito"> Actualizado correctamente</p>
+    </div>
+  </section>
+      <script>
+        // Cuando se haga clic en "Actualizar Estado"
+        document.getElementById("btnActualizar").addEventListener("click", function() {
+            const mensaje = document.getElementById("mensajeExito");
+            mensaje.style.display = "block"; // Mostrar el mensaje
+
+            // Ocultar automáticamente después de 3 segundos
+            setTimeout(() => {
+                mensaje.style.display = "none";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
