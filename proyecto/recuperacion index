@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img/logo.png" alt="Logo Pronavid">
+        </div>
+
+        <!-- Paso 1: Ingresar correo -->
+        <div class="content" id="paso1">
+            <div class="loader"></div>
+            <h2>Recuperar contraseña</h2>
+            <p>Ingresa tu correo electrónico para recibir un código para recuperar tu contraseña.</p>
+            <input type="email" id="correo" placeholder="Correo electrónico">
+            <button id="btnCorreo">Enviar enlace de recuperación</button>
+            <div class="footer">
+                <p>Recibirás un enlace en tu correo para restablecer contraseña.</p>
+            </div>
+        </div>
+
+        <!-- Paso 2: Ingresar código -->
+        <div class="content oculto" id="paso2">
+            <div class="loader"></div>
+            <h2>Recuperar contraseña</h2>
+            <p>Ingresa el código para restablecer la contraseña.</p>
+            <input type="text" id="codigo" placeholder="Código">
+            <button id="btnCodigo">Ingresar código</button>
+        </div>
+
+        <!-- Paso 3: Nueva contraseña -->
+        <div class="content oculto" id="paso3">
+            <div class="loader"></div>
+            <h2>Ingresar nueva contraseña</h2>
+            <input type="password" id="nueva" placeholder="Ingresar contraseña nueva">
+            <input type="password" id="confirmar" placeholder="Confirmar contraseña">
+            <button id="btnNueva">Ingresar nueva contraseña</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+JAVA SCRIPT
+
+
+// Seleccionamos los elementos
+const paso1 = document.getElementById('paso1');
+const paso2 = document.getElementById('paso2');
+const paso3 = document.getElementById('paso3');
+
+const btnCorreo = document.getElementById('btnCorreo');
+const btnCodigo = document.getElementById('btnCodigo');
+const btnNueva = document.getElementById('btnNueva');
+
+// Simular el flujo paso a paso
+btnCorreo.addEventListener('click', () => {
+    const correo = document.getElementById('correo').value;
+    if (correo === '') {
+        alert('Por favor, ingresa tu correo electrónico.');
+        return;
+    }
+    // Mostrar siguiente paso
+    paso1.classList.add('oculto');
+    paso2.classList.remove('oculto');
+});
+
+btnCodigo.addEventListener('click', () => {
+    const codigo = document.getElementById('codigo').value;
+    if (codigo === '') {
+        alert('Por favor, ingresa el código.');
+        return;
+    }
+    // Mostrar siguiente paso
+    paso2.classList.add('oculto');
+    paso3.classList.remove('oculto');
+});
+
+btnNueva.addEventListener('click', () => {
+    const nueva = document.getElementById('nueva').value;
+    const confirmar = document.getElementById('confirmar').value;
+
+    if (nueva === '' || confirmar === '') {
+        alert('Por favor, completa ambos campos.');
+        return;
+    }
+    if (nueva !== confirmar) {
+        alert('Las contraseñas no coinciden.');
+        return;
+    }
+
+    alert('✅ Contraseña cambiada exitosamente.');
+    // Aquí podrías redirigir a login.html si existiera
+    // window.location.href = 'login.html';
+});
+
+
+
+
+
+ESTILOS
+
+/* ==== ESTILOS GENERALES ==== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+.container {
+    width: 340px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ==== ENCABEZADO ==== */
+.header {
+    background-color: #b22222;
+    padding: 10px;
+}
+.header img {
+    width: 120px;
+}
+
+/* ==== CONTENIDO ==== */
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ==== CAMPOS Y BOTONES ==== */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* ==== ANIMACIÓN DE CARGA ==== */
+.loader {
+    margin: 0 auto 20px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==== PIE DE PÁGINA ==== */
+.footer {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+}
+/* Ocultar pasos */
+.oculto {
+    display: none;
+}
