@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronavid — Página Inicial</title>
+  <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <img src="imagenes/logo_pronavid.png" alt="Logo Pronavid" class="logo">
+    <nav class="nav">
+      <button class="btn" id="btn-login">Iniciar sesión</button>
+      <a href="registrarse.html" class="btn">Registrarse</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main">
+    <section class="productos">
+      <img src="imagenes/productos_pronavid.png" alt="Productos Pronavid" class="productos-img">
+      <h2>¡MÁS QUE UN PROVEEDOR, UN EXPERTO EN EL MUNDO DE LOS CEREALES!</h2>
+      <p>Somos tu aliado estratégico para el suministro de productos alimenticios de calidad superior.</p>
+    </section>
+  </main>
+
+  <!-- MODAL DE ROLES -->
+  <div id="modal-roles" class="modal">
+    <div class="modal-content">
+      <img src="imagenes/logo_pronavid.png" alt="Logo Pronavid" class="modal-logo">
+      <h3>Selecciona tu rol</h3>
+      <div class="roles">
+        <a href="inicio_sesion.html?rol=admin" class="btn-rol">Administrador</a>
+        <a href="inicio_sesion.html?rol=asesor" class="btn-rol">Asesor</a>
+      </div>
+      <button class="btn-cerrar" id="cerrar-modal">✖</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const modal = document.getElementById('modal-roles');
+    const btnLogin = document.getElementById('btn-login');
+    const btnCerrar = document.getElementById('cerrar-modal');
+
+    btnLogin.addEventListener('click', () => modal.classList.add('show'));
+    btnCerrar.addEventListener('click', () => modal.classList.remove('show'));
+
+    // Cerrar al hacer clic fuera del modal
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>
+
