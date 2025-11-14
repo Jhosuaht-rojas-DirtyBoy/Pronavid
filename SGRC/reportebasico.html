@@ -18,14 +18,12 @@
 
   <!-- Selector con formulario -->
   <div class="selector">
-    <form>
-      <select name="pagina" onchange="if (this.value) window.location.href=this.value;">
-        <option value="">Seleccionar</option>
-        <option value="masvendido/masvendido.html">Más vendido</option>
-        <option value="frecuente/frecuente.html">Cliente más frecuente</option>
-        <option value="registro/registro.html">Registro de cliente</option>
-      </select>
-    </form>
+    <select onchange="location = this.value;">
+        <option value="Seleccionar">Seleccionar</option>
+      <option value="frecuente.html">Cliente más frecuente</option>
+      <option value="registroc.html">Registro de clientes</option>
+      <option value="masvendido.html">Más comprado</option>
+    </select>
   </div>
 
   <!-- Tabla principal -->
