@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Productos - Pronavid</title>
+  <link rel="stylesheet" href="reportebasico.css">
+</head>
+<body>
+
+  <!-- Encabezado con logo -->
+  <header class="encabezado">
+    <img src="Logopronavid.png" alt="Logo Pronavid" class="logo">
+  </header>
+
+  <!-- Botón volver -->
+  <a href="dashboard.html" class="btn-volver">⤺</a>
+
+  <!-- Selector con formulario -->
+  <div class="selector">
+    <select onchange="location = this.value;">
+        <option value="Seleccionar">Seleccionar</option>
+      <option value="frecuente.html">Cliente más frecuente</option>
+      <option value="registroc.html">Registro de clientes</option>
+      <option value="masvendido.html">Más comprado</option>
+    </select>
+  </div>
+
+  <!-- Tabla principal -->
+  <section class="tabla-contenedor">
+    <table class="tabla">
+      <tr>
+        <th rowspan="2">Mes</th>
+        <th colspan="3">Productos existentes</th>
+        <th colspan="1">Clientes que compraron</th>
+      </tr>
+      <tr>
+        <th>Granola superior</th>
+        <th>Choquy Arroz</th>
+        <th>Galleta 60g</th>
+        <th>Nombres</th>
+      </tr>
+      <tr>
+        <td>Enero</td>
+        <td>20</td>
+        <td>15</td>
+        <td>25</td>
+        <td>Distrifruver</td>
+      </tr>
+      <tr>
+        <td>Febrero</td>
+        <td>20</td>
+        <td>20</td>
+        <td>15</td>
+        <td>Mercauno</td>
+      </tr>
+      <tr>
+        <td>Marzo</td>
+        <td>30</td>
+        <td>25</td>
+        <td>20</td>
+        <td>Deuno</td>
+      </tr>
+      <tr>
+        <td>Abril</td>
+        <td>40</td>
+        <td>30</td>
+        <td>30</td>
+        <td>Granisero</td>
+      </tr>
+      <tr>
+        <td>Mayo</td>
+        <td>35</td>
+        <td>20</td>
+        <td>30</td>
+        <td>Agromanisero</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>

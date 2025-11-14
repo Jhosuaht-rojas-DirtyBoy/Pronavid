@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente Más Frecuente - Pronavid</title>
+  <link rel="stylesheet" href="frecuente.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="Logopronavid.png" alt="Logo Pronavid" class="logo">
+  </header>
+
+  <a href="reportebasico.html" class="btn-volver">⤺</a>
+
+  <div class="selector">
+    <select onchange="location = this.value;">
+        <option value="Seleccionar">Seleccionar</option>
+      <option value="frecuente.html">Cliente más frecuente</option>
+      <option value="registroc.html">Registro de clientes</option>
+      <option value="masvendido.html">Más comprado</option>
+    </select>
+  </div>
+
+  <section class="tabla-contenedor">
+    <table>
+      <tr>
+        <th>Clientes que compraron</th>
+        <th>Cantidad de productos comprados</th>
+        <th>Producto más comprado</th>
+      </tr>
+      <tr>
+        <td>Distrifruver</td>
+        <td>39</td>
+        <td>Granola superior</td>
+      </tr>
+      <tr>
+        <td>Mercauno</td>
+        <td>32</td>
+        <td>Galleta 60g</td>
+      </tr>
+      <tr>
+        <td>Deuno</td>
+        <td>45</td>
+        <td>Choquy Arroz</td>
+      </tr>
+      <tr>
+        <td>Granisero</td>
+        <td>13</td>
+        <td>Choquy Arroz</td>
+      </tr>
+      <tr>
+        <td>Agromanisero</td>
+        <td>35</td>
+        <td>Galleta 60g</td>
+      </tr>
+      <tr class="resultado">
+        <td colspan="3">Resultado: Cliente más frecuente es <strong>Deuno</strong> con un total de <strong>45</strong> productos comprados</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>

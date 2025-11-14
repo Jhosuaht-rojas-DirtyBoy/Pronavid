@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Clientes - Pronavid</title>
+  <link rel="stylesheet" href="registroc.css">
+</head>
+<body>
+
+  <!-- Encabezado con logo -->
+  <header class="encabezado">
+    <img src="Logopronavid.png" alt="Logo Pronavid" class="logo">
+  </header>
+
+  <!-- Botón para volver -->
+  <a href="historial.html" class="btn-volver">⤺</a>
+
+  <!-- Selector principal -->
+  <div class="selector">
+    <select onchange="location = this.value;">
+        <option value="Seleccionar">Seleccionar</option>
+      <option value="frecuente.html">Cliente más frecuente</option>
+      <option value="registroc.html">Registro de clientes</option>
+      <option value="masvendido.html">Más comprado</option>
+    </select>
+  </div>
+
+  <!-- Selector del mes -->
+  <div class="dropdown-container right">
+    <select class="custom-select month-select">
+      <option selected disabled>Mes</option>
+      <option>Enero</option>
+      <option>Febrero</option>
+      <option>Marzo</option>
+      <option>Abril</option>
+      <option>Mayo</option>
+    </select>
+  </div>
+
+  <!-- Tabla de registros -->
+  <section class="tabla-contenedor">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombres de la empresa</th>
+          <th>Granola superior</th>
+          <th>Choquy Arroz</th>
+          <th>Galleta 60g</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Distrifruver</td>
+          <td>20</td>
+          <td>15</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>Mercauno</td>
+          <td>20</td>
+          <td>20</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Deuno</td>
+          <td>30</td>
+          <td>25</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Granisero</td>
+          <td>40</td>
+          <td>30</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Agromanisero</td>
+          <td>35</td>
+          <td>20</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    // Redirección funcional del selector
+    document.getElementById('menu-navegacion').addEventListener('change', function() {
+      const destino = this.value;
+      if (destino && destino !== "Seleccionar") {
+        window.location.href = destino;
+      }
+    });
+  </script>
+
+</body>
+</html>

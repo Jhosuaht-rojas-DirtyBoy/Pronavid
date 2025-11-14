@@ -1,0 +1,80 @@
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: #fff;
+}
+
+.encabezado {
+  background-color: #b32121;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+}
+
+.btn-volver {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  margin: 15px;
+  display: inline-block;
+}
+
+.selector {
+  text-align: center;
+  margin-top: 10px;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  background: #d9d9d9;
+  border: none;
+  box-shadow: 3px 3px 5px gray;
+  cursor: pointer;
+}
+
+.tabla-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: #d72626;
+  color: white;
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+}
+
+th, td {
+  border: 2px solid white;
+  padding: 10px;
+}
+
+th {
+  background-color: #b32121;
+}
+
+td {
+  font-weight: 500;
+}
+.dropdown-container {
+  text-align: right;
+  margin: 15px 30px;
+}
+
+.custom-select {
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px gray;
+  cursor: pointer;
+}
