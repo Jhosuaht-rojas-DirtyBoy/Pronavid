@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Roles</title>
+    <link rel="stylesheet" href="administrar.css">
+</head>
+<body>
+
+<header>Control de Roles</header>
+
+<div class="container">
+    <h2>Selecciona tu Rol</h2>
+
+    <select id="rol">
+        <option value="">-- Seleccionar --</option>
+        <option value="admin">Administrador</option>
+    </select>
+
+    <button onclick="mostrarPanel()">Ingresar</button>
+
+    <!-- PANEL ADMIN -->
+    <div id="panelAdmin" class="panel admin">
+        <h3>Panel Administrador</h3>
+
+        <h4>Gestión de Usuarios</h4>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carlos</td>
+                    <td>Asesor</td>
+                    <td>
+                        <button class="btn-accion">Eliminar</button>
+                        <button class="btn-accion">Conceder permisos</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>María</td>
+                    <td>Asesor</td>
+                    <td>
+                        <button class="btn-accion">Eliminar</button>
+                        <button class="btn-accion">Conceder permisos</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Luis</td>
+                    <td>Admin</td>
+                    <td>
+                        <button class="btn-accion">Eliminar</button>
+                        <button class="btn-accion">Conceder permisos</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="administrar.js"></script>
+</body>
+</html>
