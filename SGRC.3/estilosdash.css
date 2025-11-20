@@ -1,0 +1,179 @@
+:root {
+    --rojo: #B41616;
+    --naranja: #D97904;
+    --amarillo: #F2C12E;
+    --blanco: #ffffff;
+    --gris-texto: #333;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--gris-texto);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://pronavid.com.co/wp-content/uploads/2023/02/cropped-Mesa-de-trabajo-1-copia.png");
+  background-repeat: no-repeat; /* Quita repeticiones */
+  background-position: center;  /* Centrada */
+  background-color: #ffffff;    /* Fondo blanco detrás de la imagen */
+  height: 120vh;
+}
+/* BARRA SUPERIOR */
+.barra-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, var(--rojo), var(--naranja));
+    color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    height: 90px;
+}
+
+.usuario-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.icono-usuario {
+    font-size: 42px;
+    color: white;
+    text-decoration: none;
+    transition: transform .2s;
+}
+
+.icono-usuario:hover {
+    transform: scale(1.12);
+}
+
+/* TÍTULO */
+.texto_inicio {
+    text-align: center;
+    padding: 18px 10px;
+    background: var(--rojo);
+    color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.20);
+}
+
+.texto_inicio p {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* CARRUSEL */
+.opciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.btn-nav {
+    background: var(--rojo);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.btn-nav:hover {
+    background: var(--naranja);
+    transform: scale(1.1);
+}
+
+.opciones-ventana {
+    width: 75%;
+    overflow: hidden;
+}
+
+.opciones-track {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
+.btn-opcion {
+    min-width: 220px;
+    margin: 0 12px;
+    padding: 14px 30px;
+    background-color: white;
+    border: 2px solid var(--rojo);
+    border-radius: 40px;
+    color: var(--rojo);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: .25s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.btn-opcion:hover {
+    background: var(--rojo);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* IMAGEN */
+.contenedor-imagen {
+    text-align: center;
+    margin: 30px 0 80px 0;
+}
+
+.imagen-fondo {
+    width: 100%;
+    max-width: 720px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+.barra-inferior {
+    background: var(--rojo);
+    padding: 12px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.35);
+}
+
+.cerrar-sesion {
+    border: 2px solid white;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.cerrar-sesion:hover {
+    background-color: white;
+    color: var(--rojo);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .logo { height: 65px; }
+    .texto_inicio p { font-size: 30px; }
+    .btn-opcion { font-size: 14px; padding: 10px 22px; }
+    .btn-nav { width: 36px; height: 36px; font-size: 1.1rem; }
+    .imagen-fondo { max-width: 340px; }
+}

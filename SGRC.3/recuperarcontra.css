@@ -1,0 +1,101 @@
+/* ==== ESTILOS GENERALES ==== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+.container {
+    width: 340px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ==== ENCABEZADO ==== */
+.header {
+    background-color: #b22222;
+    padding: 10px;
+}
+.header img {
+    width: 120px;
+}
+
+/* ==== CONTENIDO ==== */
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ==== CAMPOS Y BOTONES ==== */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* ==== ANIMACIÓN DE CARGA ==== */
+.loader {
+    margin: 0 auto 20px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==== PIE DE PÁGINA ==== */
+.footer {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+}
+/* Ocultar pasos */
+.oculto {
+    display: none;
+}

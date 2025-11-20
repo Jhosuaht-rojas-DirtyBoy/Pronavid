@@ -1,0 +1,98 @@
+:root {
+  --rojo-pronavid: #d51d2e;
+  --rojo-oscuro: #b31928;
+  --blanco: #fff;
+  --gris-fondo: #f4f4f4;
+  --negro: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--gris-fondo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor {
+  background-color: var(--blanco);
+  border-radius: 15px;
+  padding: 40px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: aparecer 0.6s ease;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--negro);
+}
+
+.logo-brand {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--rojo-pronavid);
+  margin-left: 5px;
+}
+
+.logo-r {
+  font-size: 12px;
+  color: var(--rojo-pronavid);
+  position: relative;
+  top: -8px;
+  margin-left: 3px;
+}
+
+/* Texto principal */
+h1 {
+  color: var(--negro);
+  font-size: 22px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
+/* Botón */
+.boton {
+  display: inline-block;
+  background-color: var(--rojo-pronavid);
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 12px 35px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: var(--rojo-oscuro);
+  transform: scale(1.05);
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
