@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Roles</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/administrar.css">
+
+    <!-- JS para includes -->
+    <script src="include-html.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<div data-include="header.html"></div>
+
+<header class="titulo-principal">Control de Roles</header>
+
+<div class="container">
+
+    <h2>Selecciona tu Rol</h2>
+
+    <select id="rol">
+        <option value="">-- Seleccionar --</option>
+        <option value="admin">Administrador</option>
+    </select>
+
+    <button onclick="mostrarPanel()">Ingresar</button>
+
+    <!-- PANEL ADMIN -->
+    <div id="panelAdmin" class="panel admin" style="display: none;">
+        <h3>Panel Administrador</h3>
+
+        <h4>Gestión de Usuarios</h4>
+
+        <table id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Se llena dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- JS DEL ARCHIVO -->
+<script src="../JS/administrar.js"></script>
+
+<!-- FOOTER -->
+<div data-include="footer.html"></div>
+
+</body>
+</html>

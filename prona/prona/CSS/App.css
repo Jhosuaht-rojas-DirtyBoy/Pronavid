@@ -1,0 +1,162 @@
+
+
+
+/* Encabezado */
+header {
+    background-color: #c11f1f;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    height: 50px;
+}
+
+/* Botón volver */
+.volver {
+    position: absolute;
+    top: 70px;
+    left: 15px;
+    font-size: 28px;
+    color: black;
+    cursor: pointer;
+}
+/* Formulario */
+.formulario {
+    background-color: #fff;
+    margin: 100px auto 0 auto;
+    width: 85%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.campo input {
+    padding: 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.btn-buscar {
+    background-color: #c11f1f;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    background-color: #a01b1b;
+}
+
+/* Sección inferior con fondo difuminado */
+.seccion-inferior {
+    width: 100%;
+    max-width: 2500px;
+    margin: 30px auto;
+    position: relative;
+}
+
+/* Capa borrosa debajo de la barra */
+.fondo-difuminado {
+  background-image: url("/public/imagenes/cereales.jpg");
+  background-size: cover;
+  filter: blur(2px) brightness(1.0);
+  height: 550px;
+  border-radius: 5px;
+}
+
+/* Barra roja superior al difuminado */
+.barra-inferior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.encabezado-tabla {
+    background-color: #c11f1f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+}
+.fila-datos {
+    background-color: rgba(255,255,255,0.85);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: #333;
+    font-weight: 500;
+}
+
+.estado {
+    color: orange;
+    font-weight: bold;
+}
+
+/* Botones inferiores */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.btn-detalle,
+.btn-actualizar {
+    background-color: #c11f1f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-detalle:hover,
+.btn-actualizar:hover {
+    background-color: #a01b1b;
+}
+.btn-navegacion {
+  background-color: #b41616;
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0;
+  transition: 0.3s ease;
+}
+
+.btn-navegacion:hover {
+  background-color: #8f1010;
+  transform: scale(1.03);
+}

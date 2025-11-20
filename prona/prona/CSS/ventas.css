@@ -1,0 +1,129 @@
+/* ===== FONDO GENERAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: 
+        linear-gradient(to bottom right, rgba(193,31,31,0.9), rgba(241,196,15,0.9)),
+        url("cereales.jpg") center/cover fixed;
+    animation: fondo 10s alternate infinite;
+}
+
+@keyframes fondo {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.2); }
+}
+
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    background: #c11f1f;
+    padding: 25px;
+    text-align: center;
+    color: rgba(241, 191, 24, 0.411);
+    font-size: 28px;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== CONTENEDOR ===== */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* ===== TARJETAS ===== */
+.tarjeta {
+    background: rgba(255,255,255,0.92);
+    padding: 50px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    backdrop-filter: blur(3px);
+    animation: entrada 1.2s ease;
+}
+
+@keyframes entrada {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== TEXTOS ===== */
+h2 {
+    text-align: center;
+    color: #c11f1f;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid #c11f1f;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f1c40f;
+    box-shadow: 0 0 8px rgba(241,196,15,0.8);
+}
+
+/* ===== BOTÓN ===== */
+.btn {
+    width: 106%;
+    background: linear-gradient(to right, #c11f1f, #f1c40f);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+/* ===== TABLA ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background: #c11f1f;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+}
+
+td {
+    padding: 12px;
+    background: rgba(255,255,255,0.7);
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover td {
+    background: rgba(241,196,15,0.4);
+    transition: 0.3s;
+}
+
+/* Animación para las filas */
+@keyframes nuevaFila {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

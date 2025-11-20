@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Seguimiento</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../CSS/estilos.css">
+
+    <!-- Tipografías opcionales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilo mínimo si el CSS falla */
+        body { font-family:'Montserrat',sans-serif; background:#f4f6f8; margin:0; }
+        .btn-volver { text-decoration:none; font-size:24px; color:#b72025; }
+        .campo label { font-weight:600; display:block; margin-bottom:4px; }
+        .campo input { width:100%; padding:8px; }
+        button { cursor:pointer; }
+        .btn-buscar { background:#b72025; color:#fff; padding:8px 14px; border:none; border-radius:4px; }
+        .btn-detalle { background:#0077cc; color:#fff; padding:8px 14px; border:none; border-radius:4px; }
+        .btn-actualizar { background:#28a745; color:#fff; padding:8px 14px; border:none; border-radius:4px; }
+        .mensaje-exito { color:green; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header global -->
+    <div data-include="/HTML/partials/header.html"></div>
+
+    <main style="max-width:1000px; margin:20px auto; padding:10px;">
+
+        <!-- Botón volver -->
+        <a href="seguimientocliente.html" class="btn-volver" style="display:inline-block; margin-bottom:15px;">
+            ⤺ Volver
+        </a>
+
+        <!-- Formulario de actualización -->
+        <section class="formulario" style="margin-top:12px;">
+
+            <div class="fila" style="display:flex; gap:12px; flex-wrap:wrap;">
+                <div class="campo">
+                    <label for="idCliente">ID del cliente</label>
+                    <input type="text" id="idCliente" placeholder="Ingrese ID">
+                </div>
+
+                <div class="campo">
+                    <label for="clienteInput">Cliente</label>
+                    <input type="text" id="clienteInput" placeholder="Nombre de empresa o cliente">
+                </div>
+
+                <div class="campo">
+                    <label for="fechaInput">Fecha</label>
+                    <input type="date" id="fechaInput">
+                </div>
+            </div>
+
+            <div class="fila" style="margin-top:12px; display:flex; gap:12px; align-items:flex-end;">
+                <div class="campo" style="flex:1;">
+                    <label for="nombreCliente">Nombre cliente</label>
+                    <input type="text" id="nombreCliente" placeholder="Nombre del contacto">
+                </div>
+
+                <div class="campo" style="flex:1;">
+                    <label for="estadoActual">Estado actual</label>
+                    <input type="text" id="estadoActual" placeholder="Ej: En proceso, Finalizado...">
+                </div>
+
+                <div>
+                    <button id="btnActualizar" class="btn-buscar" type="button">Actualizar</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Tabla inferior -->
+        <section class="seccion-inferior" style="margin-top:16px;">
+            <div class="barra-inferior" style="padding:12px; background:#fff; border-radius:8px;">
+
+                <!-- Encabezado -->
+                <div class="encabezado-tabla" style="display:flex; gap:16px; font-weight:600;">
+                    <span style="flex:1">ID</span>
+                    <span style="flex:2">Cliente</span>
+                    <span style="flex:1">Fecha</span>
+                    <span style="flex:2">Nombre cliente</span>
+                    <span style="flex:1">Estado actual</span>
+                </div>
+
+                <!-- Datos -->
+                <div class="fila-datos" style="display:flex; gap:16px; padding:10px 0; border-top:1px solid #eee;">
+                    <span style="flex:1">1</span>
+                    <span style="flex:2">Distrifruver</span>
+                    <span style="flex:1">03/02/25</span>
+                    <span style="flex:2">Carlos Salamanca</span>
+                    <span style="flex:1; color:#ff8c00;">En proceso</span>
+                </div>
+
+                <!-- Botones -->
+                <div class="botones" style="margin-top:12px; display:flex; gap:10px;">
+                    <a href="seguimientocliente.html">
+                        <button class="btn-detalle" type="button">VOLVER</button>
+                    </a>
+
+                    <a href="seguimientodeclientesversionesversionesguardados.html">
+                        <button class="btn-actualizar" type="button">VER VERSIONES ANTERIORES</button>
+                    </a>
+                </div>
+
+                <!-- Mensaje de éxito -->
+                <p id="mensajeExito" class="mensaje-exito" style="display:none; margin-top:10px;">
+                    Actualizado correctamente
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script mensaje -->
+    <script>
+        document.getElementById("btnActualizar").addEventListener("click", () => {
+            const mensaje = document.getElementById("mensajeExito");
+            mensaje.style.display = "block";
+            setTimeout(() => { mensaje.style.display = "none"; }, 3000);
+        });
+    </script>
+
+    <!-- Carga del header -->
+    <script src="../JS/include-html.js"></script>
+
+</body>
+</html>
+

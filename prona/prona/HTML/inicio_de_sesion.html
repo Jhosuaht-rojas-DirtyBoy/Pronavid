@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inicio de Sesión - Pronavid</title>
+  <link rel="stylesheet" href="../CSS/diseño.css">
+</head>
+<body>
+  <div data-include="../PHP/includes/header.php"></div>
+
+  <main class="contenedor">
+    <div class="selector-rol">
+      <button id="btnAsesor">Asesor</button>
+      <button id="btnAdmin">Administrador</button>
+    </div>
+
+    <form id="formLogin" class="formulario">
+      <h2 id="tituloForm">Inicio de Sesión</h2>
+      <label>Correo:</label>
+      <input type="email" id="correo" required>
+      <label>Contraseña:</label>
+      <input type="password" id="contrasena" required>
+      <button type="submit">Iniciar Sesión</button>
+      <p id="msg" style="color:red;"></p>
+    </form>
+  </main>
+
+  <script src="../JS/include-html.js"></script>
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', async e => {
+      e.preventDefault();
+      const correo = document.getElementById('correo').value.trim();
+      const contrasena = document.getElementById('contrasena').value;
+
+      const res = await fetch('/PHP/auth/login.php', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({correo, contrasena})
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        document.getElementById('msg').textContent = data.error || 'Error';
+        return;
+      }
+      // guardar en sessionStorage para usar en JS (opcional)
+      sessionStorage.setItem('user', JSON.stringify(data.user));
+      // redirigir segun rol
+      if (data.user.id_rol == 1) window.location.href = '/HTML/dashboard.html';
+      else window.location.href = '/HTML/dashboardasesor.html';
+    });
+  </script>
+</body>
+</html>
+
+

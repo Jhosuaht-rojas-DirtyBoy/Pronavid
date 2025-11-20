@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pronavid - Éxito</title>
+<link rel="stylesheet" href="../CSS/exito.css">
+</head>
+<body>
+<div data-include="includes/header.html"></div>
+<main class="contenedor">
+<img src="../img/cropped-pronavid_logo.png" alt="Logo

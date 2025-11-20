@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registro - Pronavid</title>
+  <link rel="stylesheet" href="../CSS/diseño.css">
+</head>
+<body>
+  <div data-include="../PHP/includes/header.php"></div>
+
+  <main class="contenedor">
+    <h1>Registro</h1>
+
+    <form id="formRegister">
+      <label>Nombre</label><input id="primer_nombre" required>
+      <label>Apellido</label><input id="primer_apellido" required>
+      <label>Tipo documento</label>
+      <select id="tipo_documento">
+        <option>Cédula de ciudadanía</option>
+        <option>Tarjeta de identidad</option>
+      </select>
+      <label>Número documento</label><input id="numero_documento" required>
+      <label>Correo</label><input id="correo" type="email" required>
+      <label>Contraseña</label><input id="contrasena" type="password" required>
+      <label>Rol</label>
+      <select id="id_rol">
+        <option value="2" selected>Asesor</option>
+        <option value="1">Administrador</option>
+      </select>
+      <button type="submit">Registrar</button>
+    </form>
+    <p id="msgReg" style="color:red"></p>
+  </main>
+
+  <script src="../JS/include-html.js"></script>
+  <script>
+    document.getElementById('formRegister').addEventListener('submit', async e=>{
+      e.preventDefault();
+      const payload = {
+        primer_nombre: document.getElementById('primer_nombre').value,
+        primer_apellido: document.getElementById('primer_apellido').value,
+        tipo_documento: document.getElementById('tipo_documento').value,
+        numero_documento: document.getElementById('numero_documento').value,
+        correo: document.getElementById('correo').value,
+        contrasena: document.getElementById('contrasena').value,
+        id_rol: parseInt(document.getElementById('id_rol').value,10)
+      };
+      const res = await fetch('/PHP/auth/register.php', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (!res.ok) document.getElementById('msgReg').textContent = data.error || 'Error';
+      else window.location.href = '/HTML/inicio_de_sesion.html';
+    });
+  </script>
+</body>
+</html>
+
+

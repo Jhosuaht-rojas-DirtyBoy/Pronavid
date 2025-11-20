@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto Más Vendido - Pronavid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      .selector-estilizado {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #fff;
+    color: #333;
+    min-width: 220px; /* ancho mínimo para que se vea uniforme */
+}
+
+
+.selector {
+    text-align: center;
+    margin: 20px 0; /* espacio superior e inferior */
+}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .encabezado {
+            background-color: #b72025;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 250px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin: 20px;
+            font-size: 30px;
+            text-decoration: none;
+            color: #b72025;
+            transition: 0.3s;
+        }
+
+        .btn-volver:hover {
+            color: #e63946;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #b72025;
+        }
+
+        .tabla-contenedor {
+            max-width: 1000px;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tabla th, .tabla td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        .tabla thead {
+            background-color: #b72025;
+            color: #fff;
+        }
+
+        .tabla tfoot td {
+            font-weight: 600;
+            background-color: #f1f1f1;
+        }
+
+        .tabla tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabla tbody tr:hover {
+            background-color: #ffe6e6;
+        }
+
+        /* Resaltar producto más vendido */
+        .resaltado {
+            background-color: #ffe6e6;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .tabla th, .tabla td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            .logo {
+                width: 180px;
+            }
+            .btn-volver {
+                font-size: 24px;
+            }
+        }
+
+        .mensaje-anual {
+            text-align: center;
+            font-size: 20px;
+            color: #b72025;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+ <div data-include="../PHP/includes/header.php"></div>  
+<header class="encabezado">
+    <img src="../img/Logopronavid.png" class="logo" alt="Logo Pronavid">
+</header>
+
+<a href="reportebasico.html" class="btn-volver">⤺</a>
+
+<h1>Producto más vendido</h1>
+<div class="selector">
+  <select id="selectorOpciones" class="selector-estilizado">
+    <option value="">Seleccionar</option>
+    <option value="frecuente.html">Cliente más frecuente</option>
+    <option value="registro.html">Registro de clientes</option>
+    <option value="masvendido.html">Más comprado</option>
+  </select>
+</div>
+<!-- Tabla por mes -->
+<section class="tabla-contenedor">
+    <h2>Ventas por Mes</h2>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Granola Superior</th>
+                <th>Choquy Arroz</th>
+                <th>Galleta 60g</th>
+            </tr>
+        </thead>
+        <tbody id="tablaMeses"></tbody>
+    </table>
+</section>
+
+<!-- Mensaje anual -->
+<div class="mensaje-anual" id="mensajeMasVendido"></div>
+
+<!-- Tabla anual -->
+<section class="tabla-contenedor">
+    <h2>Resumen Anual</h2>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Total Vendido</th>
+            </tr>
+        </thead>
+        <tbody id="tablaAnual"></tbody>
+    </table>
+</section>
+
+<script>
+   const selectorOpciones = document.getElementById("selectorOpciones");
+
+  selectorOpciones.addEventListener("change", function() {
+    const pagina = this.value;
+    if (pagina) {
+      window.location.href = pagina; // redirige a la página seleccionada
+    }
+  });
+    // Datos inventados por mes
+    const ventasPorMes = {
+        "Enero": { granola: 20, choquy: 15, galleta: 25 },
+        "Febrero": { granola: 10, choquy: 20, galleta: 15 },
+        "Marzo": { granola: 30, choquy: 25, galleta: 20 },
+        "Abril": { granola: 25, choquy: 30, galleta: 28 },
+        "Mayo": { granola: 15, choquy: 10, galleta: 32 },
+        "Junio": { granola: 20, choquy: 15, galleta: 25 },
+        "Julio": { granola: 10, choquy: 20, galleta: 15 },
+        "Agosto": { granola: 30, choquy: 25, galleta: 20 },
+        "Septiembre": { granola: 25, choquy: 30, galleta: 28 },
+        "Octubre": { granola: 15, choquy: 10, galleta: 32 },
+        "Noviembre": { granola: 20, choquy: 15, galleta: 25 },
+        "Diciembre": { granola: 10, choquy: 20, galleta: 15 }
+    };
+
+    // Llenar tabla por mes
+    const tbodyMeses = document.getElementById("tablaMeses");
+    for (const mes in ventasPorMes) {
+        const datos = ventasPorMes[mes];
+        tbodyMeses.innerHTML += `
+            <tr>
+                <td>${mes}</td>
+                <td>${datos.granola}</td>
+                <td>${datos.choquy}</td>
+                <td>${datos.galleta}</td>
+            </tr>
+        `;
+    }
+
+    // Calcular totales anuales
+    let totalGranola = 0, totalChoquy = 0, totalGalleta = 0;
+    Object.values(ventasPorMes).forEach(item => {
+        totalGranola += item.granola;
+        totalChoquy += item.choquy;
+        totalGalleta += item.galleta;
+    });
+
+    const totales = [
+        { producto: "Granola Superior", total: totalGranola },
+        { producto: "Choquy Arroz", total: totalChoquy },
+        { producto: "Galleta 60g", total: totalGalleta }
+    ];
+
+    // Determinar el producto más vendido
+    const maxTotal = Math.max(totalGranola, totalChoquy, totalGalleta);
+    const productoMasVendido = totales.find(item => item.total === maxTotal).producto;
+
+    // Mostrar mensaje del producto más vendido
+    document.getElementById("mensajeMasVendido").textContent = `Producto más vendido del año: ${productoMasVendido}`;
+
+    // Llenar tabla anual
+    const tbodyAnual = document.getElementById("tablaAnual");
+    totales.forEach(item => {
+        tbodyAnual.innerHTML += `
+            <tr ${item.producto === productoMasVendido ? 'class="resaltado"' : ''}>
+                <td>${item.producto}</td>
+                <td>${item.total}</td>
+            </tr>
+        `;
+    });
+</script>
+
+</body>
+</html>
+

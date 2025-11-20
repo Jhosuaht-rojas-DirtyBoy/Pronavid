@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Asesor</title>
+    <link rel="stylesheet" href="../CSS/editar.css">
+</head>
+
+<body>
+    <div data-include="includes/header.html"></div>
+
+    <main class="contenedor">
+
+        <a href="perfilasesor.html" class="back-arrow">⟵</a>
+
+        <div class="perfil">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZA1tDcHTLzM4kr1a5uYu-WMYwpFrnFpKI5g&s" 
+                 alt="Foto de perfil" 
+                 class="foto-perfil">
+
+            <!-- FORMULARIO FUNCIONAL -->
+            <form id="formPerfil">
+
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" required>
+
+                <label for="contacto">Número de contacto</label>
+                <input type="text" id="contacto" required>
+
+                <label for="cargo">Cargo</label>
+                <input type="text" id="cargo" required>
+
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" required>
+
+                <button type="submit" class="btn">Guardar datos</button>
+
+                <!-- Mensaje de éxito -->
+                <p id="mensajeExito" style="display:none; color:green; margin-top:10px;">
+                    ✔ Datos guardados correctamente
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <div data-include="includes/footer.html"></div>
+    <script src="../JS/include-html.js"></script>
+
+    <!-- SCRIPT para guardar datos -->
+    <script>
+        const form = document.getElementById("formPerfil");
+        const mensaje = document.getElementById("mensajeExito");
+
+        // Cargar datos guardados
+        window.onload = () => {
+            document.getElementById("correo").value = localStorage.getItem("asesor_correo") || "";
+            document.getElementById("contacto").value = localStorage.getItem("asesor_contacto") || "";
+            document.getElementById("cargo").value = localStorage.getItem("asesor_cargo") || "";
+            document.getElementById("nombre").value = localStorage.getItem("asesor_nombre") || "";
+        };
+
+        // Guardar datos
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            localStorage.setItem("asesor_correo", document.getElementById("correo").value);
+            localStorage.setItem("asesor_contacto", document.getElementById("contacto").value);
+            localStorage.setItem("asesor_cargo", document.getElementById("cargo").value);
+            localStorage.setItem("asesor_nombre", document.getElementById("nombre").value);
+
+            mensaje.style.display = "block";
+
+            setTimeout(() => {
+                mensaje.style.display = "none";
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>
+

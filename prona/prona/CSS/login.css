@@ -1,0 +1,24 @@
+body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+
+.encabezado { background-color: #8b1d1d; color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; }
+.logo { height: 60px; }
+
+.contenedor { max-width: 500px; margin: 40px auto; background-color: #fff5e6; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+
+.selector-rol { display: flex; justify-content: space-around; margin-bottom: 20px; }
+.selector-rol button { background-color: #b11b1b; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+.selector-rol button:hover { background-color: #e63e3e; }
+
+.formulario { display: flex; flex-direction: column; gap: 10px; }
+.formulario input, .formulario select { padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+.formulario button { background-color: #b11b1b; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+.formulario button:hover { background-color: #e63e3e; }
+
+.oculto { display: none; }
+.msg { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: block; }
+.msg.success { background: #c8f7c5; color: #145214; }
+.msg.error { background: #f7c5c5; color: #7a1616; }
+
+.actions { display: flex; justify-content: space-between; margin-top: 10px; }
+.actions button { background-color: #ccc; color: #222; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+.actions button:hover { background-color: #bbb; }

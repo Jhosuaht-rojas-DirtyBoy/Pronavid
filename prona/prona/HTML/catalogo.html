@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo PRONAVID</title>
+  <link rel="stylesheet" href="../CSS/styles-catalogo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Proveedores</h1>
+  </header>
+
+  <div class="categorias" id="categorias"></div>
+  <div class="productos" id="productos"></div>
+
+  <div id="carrito">
+    <div class="header-carrito">
+      <h2>Carrito</h2>
+      <button class="cerrar" id="cerrarCarrito">X</button>
+    </div>
+    <div id="contenido-carrito"></div>
+    <div class="footer-carrito">
+      <h3 id="total">Total: $0</h3>
+      <button class="btn-accion" id="guardarCotizacion">Guardar Cotización</button>
+      <button class="btn-accion" id="registrarPedido">Registrar Pedido</button>
+      <button class="btn-accion agregar-mas" id="agregarMas">Agregar más</button>
+    </div>
+  </div>
+
+  <canvas id="qr-canvas"></canvas>
+
+  <script src="../JS/script-catalogo.js"></script>
+</body>
+</html>

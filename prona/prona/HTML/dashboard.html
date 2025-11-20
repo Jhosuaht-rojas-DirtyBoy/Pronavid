@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pronavid</title>
+
+    <link rel="stylesheet" href="../CSS/estilosdash.css">
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <header class="barra-superior">
+        <img src="../img/Logopronavid.png" class="logo" alt="Logo Pronavid">
+
+        <div class="usuario-contenedor">
+            <span>Administrador</span>
+            <a href="perfiladmin.html" class="icono-usuario">👤</a>
+        </div>
+    </header>
+
+    <!-- TÍTULO -->
+    <div class="texto_inicio">
+        <p>Seleccione una opción</p>
+    </div>
+
+    <!-- CARRUSEL -->
+    <section class="opciones">
+        <button class="btn-nav" id="btn-prev">◀</button>
+
+        <div class="opciones-ventana">
+            <div class="opciones-track">
+                <a href="historial.html" class="btn-opcion">Historial de clientes</a>
+                <a href="reportebasico.html" class="btn-opcion">Reportes básicos</a>
+                <a href="seguimientocliente.html" class="btn-opcion">Seguimiento de clientes</a>
+                <a href="catalogo.html" class="btn-opcion">Catálogo</a>
+            </div>
+        </div>
+
+        <button class="btn-nav" id="btn-next">▶</button>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="barra-inferior">
+        <a href="index.html" class="cerrar-sesion">Cerrar sesión</a>
+    </footer>
+
+    <script src="../JS/dash.js"></script>
+</body>
+</html>
+        
