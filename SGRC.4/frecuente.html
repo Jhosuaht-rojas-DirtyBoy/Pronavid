@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Más Frecuente - Pronavid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .encabezado {
+            background-color: #b72025;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 250px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin: 20px;
+            font-size: 30px;
+            text-decoration: none;
+            color: #b72025;
+            transition: 0.3s;
+        }
+
+        .btn-volver:hover {
+            color: #e63946;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b72025;
+            margin-top: 10px;
+        }
+
+        .selector {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        select {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        select:hover {
+            border-color: #b72025;
+        }
+
+        .tabla-contenedor {
+            max-width: 900px;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tabla th, .tabla td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        .tabla thead {
+            background-color: #b72025;
+            color: #fff;
+        }
+
+        .tabla tfoot td {
+            font-weight: 600;
+            background-color: #f1f1f1;
+        }
+
+        .tabla tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabla tbody tr:hover {
+            background-color: #ffe6e6;
+        }
+
+        @media (max-width: 600px) {
+            .tabla th, .tabla td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            .logo {
+                width: 180px;
+            }
+            .btn-volver {
+                font-size: 24px;
+            }
+            select {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="encabezado">
+    <img src="Logopronavid.png" class="logo" alt="Logo Pronavid">
+</header>
+
+<a href="reportebasico.html" class="btn-volver">⤺</a>
+
+<h1>Cliente Más Frecuente</h1>
+<div class="selector">
+  <select id="selectorOpciones">
+    <option value="">Seleccionar</option>
+    <option value="frecuente.html">Cliente más frecuente</option>
+    <option value="registroc.html">Registro de clientes</option>
+    <option value="masvendido.html">Más comprado</option>
+  </select>
+</div>
+<!-- Selector de meses -->
+<div class="selector">
+    <select id="selectorMes">
+        <option value="">Seleccionar mes</option>
+        <option value="Enero">Enero</option>
+        <option value="Febrero">Febrero</option>
+        <option value="Marzo">Marzo</option>
+        <option value="Abril">Abril</option>
+        <option value="Mayo">Mayo</option>
+        <option value="Junio">Junio</option>
+        <option value="Julio">Julio</option>
+        <option value="Agosto">Agosto</option>
+        <option value="Septiembre">Septiembre</option>
+        <option value="Octubre">Octubre</option>
+        <option value="Noviembre">Noviembre</option>
+        <option value="Diciembre">Diciembre</option>
+    </select>
+</div>
+
+<!-- Tabla de clientes -->
+<section class="tabla-contenedor">
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Cliente Más Frecuente (Mes)</th>
+                <th>Veces Comprado</th>
+                <th>Total Productos Comprados</th>
+                <th>Producto Más Comprado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="clienteNombre"></td>
+                <td id="clienteConteo"></td>
+                <td id="clienteProductos"></td>
+                <td id="productoTop"></td>
+            </tr>
+            <tr>
+                <th colspan="4">Cliente Más Frecuente del Año</th>
+            </tr>
+            <tr>
+                <td id="clienteAnual"></td>
+                <td id="conteoAnual"></td>
+                <td id="productosAnual"></td>
+                <td id="productoAnual"></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<script>
+   const selectorOpciones = document.getElementById("selectorOpciones");
+
+  selectorOpciones.addEventListener("change", function() {
+    const pagina = this.value;
+    if (pagina) {
+      window.location.href = pagina; // redirige a la página seleccionada
+    }
+  });
+    const historialDatos = {
+        "Enero":[{cliente:"Distrifruver",producto:"Granola",cantidad:4},{cliente:"Mercauno",producto:"Avena",cantidad:3},{cliente:"Distrifruver",producto:"Granola",cantidad:2}],
+        "Febrero":[{cliente:"Granisero",producto:"Turrón",cantidad:5},{cliente:"Deuno",producto:"Granola",cantidad:1},{cliente:"Granisero",producto:"Turrón",cantidad:2}],
+        "Marzo":[{cliente:"Agromanisero",producto:"Avena",cantidad:3},{cliente:"Mercauno",producto:"Turrón",cantidad:2},{cliente:"Agromanisero",producto:"Avena",cantidad:1}],
+        "Abril":[{cliente:"Distrifruver",producto:"Granola",cantidad:4},{cliente:"Granisero",producto:"Avena",cantidad:2},{cliente:"Distrifruver",producto:"Turrón",cantidad:1}],
+        "Mayo":[{cliente:"Deuno",producto:"Granola",cantidad:3},{cliente:"Agromanisero",producto:"Turrón",cantidad:2},{cliente:"Deuno",producto:"Granola",cantidad:4}],
+        "Junio":[{cliente:"Distrifruver",producto:"Avena",cantidad:3},{cliente:"Mercauno",producto:"Granola",cantidad:2},{cliente:"Distrifruver",producto:"Avena",cantidad:1}],
+        "Julio":[{cliente:"Granisero",producto:"Turrón",cantidad:5},{cliente:"Deuno",producto:"Avena",cantidad:2},{cliente:"Granisero",producto:"Turrón",cantidad:4}],
+        "Agosto":[{cliente:"Agromanisero",producto:"Granola",cantidad:3},{cliente:"Mercauno",producto:"Avena",cantidad:2},{cliente:"Agromanisero",producto:"Granola",cantidad:5}],
+        "Septiembre":[{cliente:"Distrifruver",producto:"Avena",cantidad:6},{cliente:"Granisero",producto:"Granola",cantidad:3},{cliente:"Distrifruver",producto:"Avena",cantidad:2}],
+        "Octubre":[{cliente:"Deuno",producto:"Granola",cantidad:3},{cliente:"Agromanisero",producto:"Avena",cantidad:2},{cliente:"Deuno",producto:"Granola",cantidad:1}],
+        "Noviembre":[{cliente:"Distrifruver",producto:"Turrón",cantidad:3},{cliente:"Granisero",producto:"Avena",cantidad:3},{cliente:"Distrifruver",producto:"Granola",cantidad:4}],
+        "Diciembre":[{cliente:"Deuno",producto:"Granola",cantidad:4},{cliente:"Agromanisero",producto:"Turrón",cantidad:2},{cliente:"Deuno",producto:"Granola",cantidad:3}]
+    };
+
+    const selector = document.getElementById("selectorMes");
+    const clienteNombre = document.getElementById("clienteNombre");
+    const clienteConteo = document.getElementById("clienteConteo");
+    const clienteProductos = document.getElementById("clienteProductos");
+    const productoTop = document.getElementById("productoTop");
+
+    const clienteAnual = document.getElementById("clienteAnual");
+    const conteoAnual = document.getElementById("conteoAnual");
+    const productosAnual = document.getElementById("productosAnual");
+    const productoAnual = document.getElementById("productoAnual");
+
+    function actualizarClienteMes(mes){
+        if(!mes){
+            clienteNombre.textContent="";
+            clienteConteo.textContent="";
+            clienteProductos.textContent="";
+            productoTop.textContent="";
+            return;
+        }
+
+        const datosMes=historialDatos[mes];
+        let conteoClientes={},productosClientes={},productosFrecuencia={};
+
+        datosMes.forEach(v=>{
+            conteoClientes[v.cliente]=(conteoClientes[v.cliente]||0)+1;
+            productosClientes[v.cliente]=(productosClientes[v.cliente]||0)+v.cantidad;
+            productosFrecuencia[v.producto]=(productosFrecuencia[v.producto]||0)+v.cantidad;
+        });
+
+        const masFrecuente=Object.keys(conteoClientes).reduce((a,b)=>conteoClientes[a]>conteoClientes[b]?a:b);
+        const topProducto=Object.keys(productosFrecuencia).reduce((a,b)=>productosFrecuencia[a]>productosFrecuencia[b]?a:b);
+
+        clienteNombre.textContent=masFrecuente;
+        clienteConteo.textContent=conteoClientes[masFrecuente];
+        clienteProductos.textContent=productosClientes[masFrecuente];
+        productoTop.textContent=topProducto;
+    }
+
+    function calcularClienteAnual(){
+        let conteo={},productos={},productosTotales={};
+
+        Object.values(historialDatos).forEach(mesArray=>{
+            mesArray.forEach(v=>{
+                conteo[v.cliente]=(conteo[v.cliente]||0)+1;
+                productos[v.cliente]=(productos[v.cliente]||0)+v.cantidad;
+                productosTotales[v.producto]=(productosTotales[v.producto]||0)+v.cantidad;
+            });
+        });
+
+        const topCliente=Object.keys(conteo).reduce((a,b)=>conteo[a]>conteo[b]?a:b);
+        const topProducto=Object.keys(productosTotales).reduce((a,b)=>productosTotales[a]>productosTotales[b]?a:b);
+
+        clienteAnual.textContent=topCliente;
+        conteoAnual.textContent=conteo[topCliente];
+        productosAnual.textContent=productos[topCliente];
+        productoAnual.textContent=topProducto;
+    }
+
+    calcularClienteAnual();
+
+    selector.addEventListener("change", e=>{
+        actualizarClienteMes(e.target.value);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: #b62824;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  background-color: white;
+  color: #b62824;
+  border: 1px solid #b62824;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #b62824;
+  color: white;
+}
+
+main {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  flex: 1;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 150px 0;
+}
+
+.productos img {
+  height: 270px;
+}
+
+
+.texto h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.texto p {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 100px;
+}
+
+footer {
+  width: 100%;
+  background-color: #b62824;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* ============ MODAL ============ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.ventana {
+  background: #a32222;
+  color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  position: relative;
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.logo-modal {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+}
+
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.rol {
+  background: white;
+  color: #a32222;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.rol:hover {
+  background: #ce7c7c;
+}

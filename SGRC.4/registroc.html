@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Compras - Pronavid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .encabezado {
+            background-color: #b72025;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 250px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin: 20px;
+            font-size: 30px;
+            text-decoration: none;
+            color: #b72025;
+            transition: 0.3s;
+        }
+
+        .btn-volver:hover {
+            color: #e63946;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b72025;
+            margin-top: 10px;
+        }
+
+        .selector {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        select {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        select:hover {
+            border-color: #b72025;
+        }
+
+        .tabla-contenedor {
+            max-width: 1000px;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tabla th, .tabla td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        .tabla thead {
+            background-color: #b72025;
+            color: #fff;
+        }
+
+        .tabla tfoot td {
+            font-weight: 600;
+            background-color: #f1f1f1;
+        }
+
+        .tabla tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabla tbody tr:hover {
+            background-color: #ffe6e6;
+        }
+
+        @media (max-width: 600px) {
+            .tabla th, .tabla td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            .logo {
+                width: 180px;
+            }
+            .btn-volver {
+                font-size: 24px;
+            }
+            select {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="encabezado">
+    <img src="Logopronavid.png" class="logo" alt="Logo Pronavid">
+</header>
+
+<a href="reportebasico.html" class="btn-volver">⤺</a>
+
+<h1>Registro de Compras por Mes</h1>
+<div class="selector">
+  <select id="selectorOpciones">
+    <option value="">Seleccionar</option>
+    <option value="frecuente.html">Cliente más frecuente</option>
+    <option value="registroc.html">Registro de clientes</option>
+    <option value="masvendido.html">Más comprado</option>
+  </select>
+</div>
+<!-- Selector de meses -->
+<div class="selector">
+    <select id="selectorMes">
+        <option value="Enero">Enero</option>
+        <option value="Febrero">Febrero</option>
+        <option value="Marzo">Marzo</option>
+        <option value="Abril">Abril</option>
+        <option value="Mayo">Mayo</option>
+        <option value="Junio">Junio</option>
+        <option value="Julio">Julio</option>
+        <option value="Agosto">Agosto</option>
+        <option value="Septiembre">Septiembre</option>
+        <option value="Octubre">Octubre</option>
+        <option value="Noviembre">Noviembre</option>
+        <option value="Diciembre">Diciembre</option>
+    </select>
+</div>
+
+<!-- Tabla de clientes y productos -->
+<section class="tabla-contenedor">
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Granola Superior</th>
+                <th>Choquy Arroz</th>
+                <th>Galleta 60g</th>
+            </tr>
+        </thead>
+        <tbody id="tablaClientes"></tbody>
+        <tfoot>
+            <tr>
+                <td><b>Total</b></td>
+                <td id="totalGranola"></td>
+                <td id="totalChoquy"></td>
+                <td id="totalGalleta"></td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+<script>
+   const selectorOpciones = document.getElementById("selectorOpciones");
+
+  selectorOpciones.addEventListener("change", function() {
+    const pagina = this.value;
+    if (pagina) {
+      window.location.href = pagina; // redirige a la página seleccionada
+    }
+  });
+    const datosPorMes = {
+        "Enero": [
+            { cliente: "Distrifruver", granola: 20, choquy: 15, galleta: 25 },
+            { cliente: "Mercauno", granola: 10, choquy: 20, galleta: 15 }
+        ],
+        "Febrero": [
+            { cliente: "Granisero", granola: 30, choquy: 25, galleta: 20 },
+            { cliente: "Deuno", granola: 25, choquy: 30, galleta: 28 }
+        ],
+        "Marzo": [
+            { cliente: "Agromanisero", granola: 15, choquy: 10, galleta: 32 },
+            { cliente: "Mercauno", granola: 20, choquy: 25, galleta: 15 }
+        ],
+        "Abril": [
+            { cliente: "Distrifruver", granola: 35, choquy: 20, galleta: 18 },
+            { cliente: "Granisero", granola: 25, choquy: 15, galleta: 22 }
+        ],
+        "Mayo": [
+            { cliente: "Deuno", granola: 10, choquy: 15, galleta: 20 },
+            { cliente: "Agromanisero", granola: 20, choquy: 25, galleta: 30 }
+        ],
+        "Junio": [
+            { cliente: "Distrifruver", granola: 20, choquy: 15, galleta: 25 },
+            { cliente: "Mercauno", granola: 10, choquy: 20, galleta: 15 }
+        ],
+        "Julio": [
+            { cliente: "Granisero", granola: 30, choquy: 25, galleta: 20 },
+            { cliente: "Deuno", granola: 25, choquy: 30, galleta: 28 }
+        ],
+        "Agosto": [
+            { cliente: "Agromanisero", granola: 15, choquy: 10, galleta: 32 },
+            { cliente: "Mercauno", granola: 20, choquy: 25, galleta: 15 }
+        ],
+        "Septiembre": [
+            { cliente: "Distrifruver", granola: 35, choquy: 20, galleta: 18 },
+            { cliente: "Granisero", granola: 25, choquy: 15, galleta: 22 }
+        ],
+        "Octubre": [
+            { cliente: "Deuno", granola: 10, choquy: 15, galleta: 20 },
+            { cliente: "Agromanisero", granola: 20, choquy: 25, galleta: 30 }
+        ],
+        "Noviembre": [
+            { cliente: "Distrifruver", granola: 35, choquy: 20, galleta: 18 },
+            { cliente: "Granisero", granola: 25, choquy: 15, galleta: 22 }
+        ],
+        "Diciembre": [
+            { cliente: "Deuno", granola: 10, choquy: 15, galleta: 20 },
+            { cliente: "Agromanisero", granola: 20, choquy: 25, galleta: 30 }
+        ]
+    };
+
+    function actualizarTabla(mes) {
+        const datos = datosPorMes[mes] || [];
+        const tbody = document.getElementById("tablaClientes");
+        tbody.innerHTML = "";
+
+        let totalGranola = 0;
+        let totalChoquy = 0;
+        let totalGalleta = 0;
+
+        datos.forEach(item => {
+            totalGranola += Number(item.granola) || 0;
+            totalChoquy += Number(item.choquy) || 0;
+            totalGalleta += Number(item.galleta) || 0;
+
+            tbody.innerHTML += `
+                <tr>
+                    <td>${item.cliente}</td>
+                    <td>${item.granola}</td>
+                    <td>${item.choquy}</td>
+                    <td>${item.galleta}</td>
+                </tr>
+            `;
+        });
+
+        document.getElementById("totalGranola").textContent = totalGranola;
+        document.getElementById("totalChoquy").textContent = totalChoquy;
+        document.getElementById("totalGalleta").textContent = totalGalleta;
+    }
+
+    const selector = document.getElementById("selectorMes");
+    actualizarTabla(selector.value);
+
+    selector.addEventListener("change", e => {
+        actualizarTabla(e.target.value);
+    });
+</script>
+
+</body>
+</html>
