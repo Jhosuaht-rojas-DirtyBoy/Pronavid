@@ -7,9 +7,9 @@ header {
     font-weight: bold;
     text-align: center;
 
-   
-   background: #9e1b1b;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+
+    background: #EF8903;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -42,7 +42,8 @@ h1 {
 /* BOTÓN PREMIUM PRONAVID */
 .btn {
     padding: 12px 22px;
-    background: rgba(158, 27, 27, 0.92); /* rojo PRONAVID con transparencia */
+    background: #EF8903;
+    /* rojo PRONAVID con transparencia */
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px);
     color: white;
@@ -52,23 +53,25 @@ h1 {
     letter-spacing: 0.5px;
     border-radius: 14px;
     transition: .25s ease-in-out;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* HOVER — toque elegante, más iluminación */
 .btn:hover {
-    background: #b41f1f;
+    background: #b85300;
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* CLICK — efecto de botón real */
 .btn:active {
     transform: scale(0.96);
 }
+
 /* Estado activo de categoría */
 .btn.activo {
-    background: #e2b04a; /* dorado elegante */
+    background: #e2b04a;
+    /* dorado elegante */
     color: #3a2a00;
     border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow: 0 6px 15px rgba(226, 176, 74, 0.4);
@@ -86,7 +89,7 @@ h1 {
 .card {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     padding: 15px;
     text-align: center;
     transition: .3s;
@@ -138,7 +141,7 @@ h1 {
     width: 420px;
     height: 100%;
     background: white;
-    box-shadow: -4px 0 10px rgba(0,0,0,0.3);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
     display: none;
     flex-direction: column;
     padding: 0;
@@ -237,6 +240,7 @@ h1 {
 .agregar-mas:hover {
     background: #222;
 }
+
 /* ======== ESTILOS GENERALES ======== */
 body {
     font-family: 'Poppins', sans-serif;
@@ -261,13 +265,13 @@ body {
     padding: 15px;
     text-align: center;
     transition: transform .2s ease, box-shadow .2s ease;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
     cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.12);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
@@ -328,7 +332,7 @@ body {
     height: 100%;
     width: 380px;
     background: white;
-    box-shadow: -3px 0 12px rgba(0,0,0,0.15);
+    box-shadow: -3px 0 12px rgba(0, 0, 0, 0.15);
     padding: 20px;
     display: none;
     flex-direction: column;
@@ -349,7 +353,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 12px;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .item-carrito img {
@@ -430,6 +434,7 @@ body {
     font-size: 22px;
     cursor: pointer;
 }
+
 #carrito {
     position: fixed;
     right: 0;
@@ -438,12 +443,13 @@ body {
     width: 380px;
 
     background: white;
-    box-shadow: -3px 0 12px rgba(0,0,0,0.15);
+    box-shadow: -3px 0 12px rgba(0, 0, 0, 0.15);
 
     padding: 20px;
     display: none;
     flex-direction: column;
     overflow-y: auto;
 
-    z-index: 9999;   /* 👈 ESTE ES EL TRUCO */
+    z-index: 9999;
+    /* 👈 ESTE ES EL TRUCO */
 }

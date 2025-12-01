@@ -1,64 +1,48 @@
-import { useState } from "react";
-import catalogo from "./data/catalogo";
-import Header from "./components/Header";
-import Categorias from "./components/Categorias";
-import Productos from "./components/Productos";
-import Carrito from "./components/Carrito";
+import React from "react";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Rutas públicas
+import InicioPronavid from "./pages/index.jsx";
+import Login from "./pages/login.jsx";
+import Registro from "./pages/registro.jsx";
+
+// Rutas internas
+import Dashboard from "./pages/Dashboard";
+import Historial from "./pages/Historial";
+import Seguimiento from "./pages/Seguimiento";
+import Catalogo from "./pages/Catalogo.jsx";
+import DashboardAsesor from "./pages/DashboardAsesor.jsx";
+import ReporteBasico from "./pages/ReporteBasico.jsx";
+import HistorialProductos from "./pages/Historial";
+import MasVendido from "./pages/MasVendido";
+import Frecuente from "./pages/Frecuente.jsx";
+import RegistroCliente from "./pages/RegistroCliente";
+import Pedidos from "./pages/Pedidos.jsx";
 
 export default function App() {
-  const [categoriaActual, setCategoriaActual] = useState("Distrifruver");
-  const [carrito, setCarrito] = useState({});
-  const [mostrarCarrito, setMostrarCarrito] = useState(false);
-
-  const agregarCarrito = (categoria, index, cantidad) => {
-    const producto = catalogo[categoria][index];
-    const id = categoria + "-" + index;
-
-    setCarrito(prev => {
-      const copia = { ...prev };
-      if (!copia[categoria]) copia[categoria] = [];
-
-      const existe = copia[categoria].find(p => p.id === id);
-
-      if (existe) {
-        existe.cantidad += cantidad;
-      } else {
-        copia[categoria].push({
-          id,
-          nombre: producto.nombre,
-          precio: producto.precio,
-          img: producto.img,
-          cantidad
-        });
-      }
-
-      return { ...copia };
-    });
-
-    setMostrarCarrito(true);
-  };
-
   return (
-    <>
-      <Header />
+    <Router>
+      <Routes>
 
-      <Categorias 
-        categoriaActual={categoriaActual}
-        setCategoria={setCategoriaActual}
-      />
+        {/* Rutas públicas */}
+        <Route path="/" element={<InicioPronavid />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
 
-      <Productos 
-        productos={catalogo[categoriaActual]}
-        categoria={categoriaActual}
-        agregarCarrito={agregarCarrito}
-      />
-
-      <Carrito 
-        carrito={carrito}
-        setCarrito={setCarrito}
-        visible={mostrarCarrito}
-        cerrar={() => setMostrarCarrito(false)}
-      />
-    </>
+        {/* Rutas internas */}
+        <Route path="/Pedidos" element={<Pedidos/>} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/registro-cliente" element={<RegistroCliente/>}/>
+        <Route path="/historial" element={<Historial />} />
+        <Route path="/Seguimiento" element={<Seguimiento />} />
+        <Route path="/Catalogo" element={<Catalogo />} />
+        <Route path="/DashboardAsesor" element={<DashboardAsesor/>}/>
+        <Route path="/reporte-basico" element={<ReporteBasico/>}/>
+        <Route path="/historial" element={<HistorialProductos />} />
+        <Route path="/mas-vendido" element={<MasVendido />} />
+        <Route path="/cliente-frecuente" element={<Frecuente />} />
+      </Routes>
+    </Router>
   );
 }
