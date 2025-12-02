@@ -1,0 +1,141 @@
+
+/* Header azul */
+.barra-superior {
+  width: 100%;
+  background-color: #0F172A; /* Color azul oscuro */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;       /* Altura mínima del header */
+}
+
+.logo-area .logo {
+  width: 130px;             /* Logo más grande */
+  margin-bottom: 2rem;      /* Más espacio debajo del logo */
+}
+
+.usuario-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;    /* Separación entre usuario y tarjetas */
+}
+.header-tarjetas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;         /* Más espacio entre usuario y tarjetas */
+  flex-wrap: wrap;
+}
+.icono-usuario { font-size: 1.5rem; }
+
+
+
+/* Tarjetas dentro del header */
+.header-tarjetas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.tarjeta-header {
+  display: flex;
+  gap: 0.5rem;
+  background: #1e293b;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  flex: 1;
+  min-width: 180px;
+}
+
+.tarjeta-header .icono {
+  font-size: 1.8rem;
+}
+
+
+/* Footer */
+.barra-inferior {
+  background-color: #0F172A;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: right;
+}
+
+.cerrar-sesion {
+  background-color: #ef4444;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* ===================== Sidebar / Barra superior ===================== */
+.barra-superior {
+    width: 250px;
+    height: 100vh;
+    background-color: #0F172A; /* Azul oscuro */
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+/* Logo */
+.logo-area .logo {
+    width: 12000px;
+    margin-bottom: 2rem;
+}
+
+/* Usuario */
+.usuario-contenedor {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.usuario-contenedor span {
+    display: block;
+    color: #fff;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.icono-usuario {
+    font-size: 2rem;
+}
+
+/* Menu lateral */
+.barra-superior nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+
+/* ===================== Main Content ===================== */
+.main-content {
+    margin-left: 500px;
+    padding: 2rem;
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+
+
+/* ===================== Footer ===================== */
+.barra-inferior {
+    margin-left: 250px;
+    padding: 1rem 2rem;
+    background-color: #0f172a;
+    color: #fff;
+    text-align: right;
+}

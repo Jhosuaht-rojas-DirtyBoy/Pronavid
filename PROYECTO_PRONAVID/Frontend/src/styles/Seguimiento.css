@@ -1,0 +1,301 @@
+/* Seguimiento.css */
+
+/* Página */
+.sc-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Header moderno */
+.sc-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar el título */
+    position: relative;
+    padding: 25px 40px;
+    background: linear-gradient(90deg, #7587a7, #536b9b);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    animation: fadeInDown 0.8s ease;
+}
+
+/* Logo a la izquierda */
+.sc-logo {
+    position: absolute;
+    left: 40px;
+    height: 40px;
+}
+
+/* Título centrado */
+.sc-title {
+    margin: 0 auto;
+    font-size: 28px;      /* Más grande */
+    font-weight: 600;     /* Más énfasis */
+    color: #ffffff;       /* Blanco */
+    text-align: center;
+    letter-spacing: 1px;  /* Espaciado entre letras */
+}
+
+
+
+
+/* Animación suave */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botón de regreso */
+.sc-back-btn {
+    align-self: flex-start;
+    margin-bottom: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.sc-back-btn:hover {
+    color: #007bff;
+}
+
+/* Página */
+.sc-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f6fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+.sc-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.sc-logo {
+    height: 60px;
+    position: absolute;
+    left: 40px;
+}
+
+.sc-title {
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+/* Tarjeta de búsqueda */
+.sc-search-card {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sc-search-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sc-input-main {
+    flex: 2;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.sc-input-main:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0,123,255,0.2);
+}
+
+.sc-input-date {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.sc-btn-search {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sc-btn-search:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla de resultados */
+.sc-table-section {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.sc-table-top {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.sc-table-header, .sc-table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1.5fr;
+    padding: 12px 20px;
+    align-items: center;
+}
+
+.sc-table-header {
+    background-color: #f1f3f8;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.sc-table-row {
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.sc-table-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.sc-table-row:hover {
+    background-color: #eef4ff;
+}
+
+/* Badges de estado */
+.sc-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+}
+
+.sc-badge.comprador-frecuente { background-color: #28a745; }
+.sc-badge.lead-nuevo { background-color: #ffc107; color: #333; }
+.sc-badge.seguimiento-pendiente { background-color: #dc3545; }
+
+/* Acciones */
+.sc-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.sc-action-btn {
+    background: #f1f3f8;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.sc-action-btn:hover {
+    background: #d0e4ff;
+}
+
+
+/* Sección inferior */
+.sc-lower-section {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+}
+
+.sc-blur-bg {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(0,123,255,0.05);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Tabla */
+.sc-table-top {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.sc-table-header, .sc-table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+    padding: 12px 20px;
+    align-items: center;
+}
+
+.sc-table-header {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.sc-table-row {
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.sc-table-row:hover {
+    background-color: #f9f9f9;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sc-row {
+        flex-direction: column;
+    }
+
+    .sc-table-header, .sc-table-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}

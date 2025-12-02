@@ -1,0 +1,48 @@
+.auth-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor {
+  perspective: 1000px;
+}
+
+.glass-card {
+  width: 350px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  position: relative;
+  transition: transform 0.6s ease;
+}
+
+.glass-card.login .formulario:nth-child(2) { display: none; }
+.glass-card.registro .formulario:nth-child(1) { display: none; }
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease;
+}
+
+.cambiar-modo {
+  margin-top: 10px;
+  text-align: center;
+  color: blue;
+  cursor: pointer;
+}
+
+.msg {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.msg.success { background-color: #d4edda; color: #155724; }
+.msg.error { background-color: #f8d7da; color: #721c24; }

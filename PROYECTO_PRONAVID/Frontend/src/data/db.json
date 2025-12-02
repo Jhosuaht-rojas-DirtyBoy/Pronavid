@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "usuario@ejemplo.com",
+      "password": "123456",
+      "name": "Usuario de prueba",
+      "rol": "Asesor"
+    },
+    {
+      "id": "2",
+      "email": "Admin@test.com",
+      "password": "admin123",
+      "name": "Administrador",
+      "rol": "Administrador"
+    },
+    {
+      "id": "3",
+      "email": "juan@test.com",
+      "password": "test123",
+      "name": "Juan Péreaz",
+      "rol": "Asesor"
+    },
+    {
+      "id": "4",
+      "email": "a@test",
+      "password": "1234",
+      "name": "Nireba",
+      "rol": "Administrador"
+    },
+    {
+      "id": "5",
+      "email": "culo@gmail.com",
+      "password": "semendetoro",
+      "name": "culo rico",
+      "rol": "Asesor"
+    },
+    {
+      "id": 6,
+      "email": "sdfmsodfmneas@hsudcbsun",
+      "password": "sfjisofj",
+      "name": "juan sebastian7",
+      "rol": "Asesor"
+    }
+  ]
+}
