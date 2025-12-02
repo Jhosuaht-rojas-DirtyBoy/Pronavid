@@ -1,0 +1,105 @@
+/* CONTENEDOR GENERAL */
+.sc-page {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+/* Encabezado */
+.sc-header {
+    background-color: #c11f1f;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sc-logo {
+    height: 50px;
+}
+
+/* Botón volver */
+.sc-back-btn {
+    position: absolute;
+    top: 70px;
+    left: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Formulario */
+.sc-form {
+    background: #fff;
+    width: 85%;
+    max-width: 800px;
+    margin: 100px auto 0 auto;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.sc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sc-field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.sc-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sc-field input {
+    padding: 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.sc-btn-search {
+    background: #c11f1f;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.sc-btn-search:hover {
+    background: #a01b1b;
+}
+
+/* Sección inferior */
+.sc-lower-section {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+
+.sc-blur-bg {
+    background: url('imagenes/cereales.jpg') center/cover;
+    height: 550px;
+    filter: blur(2px) brightness(1.0);
+    border-radius: 5px;
+}
+
+.sc-table-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.sc-table-header {
+    background: #c11f1f;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+}
